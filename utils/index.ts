@@ -47,8 +47,10 @@ export async function fetchCars(filters: FilterProps) {
   const { manufacturer, year, model, limit, fuel } = filters;
 
   // Set the required headers for the API request
-  const headers: HeadersInit = {
-    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
+  const headers = {
+    "X-RapidAPI-Key":
+      process.env.NEXT_PUBLIC_RAPID_API_KEY ||
+      "3fc2f5d6eemsh33352a3f433fa78p1ec0d2jsn649d54a298aa",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
 
@@ -72,7 +74,7 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   url.searchParams.append(
     "customer",
-    process.env.NEXT_PUBLIC_IMAGIN_API_KEY || ""
+    process.env.NEXT_PUBLIC_IMAGIN_API_KEY || "hrjavascript-mastery"
   );
   url.searchParams.append("make", make);
   url.searchParams.append("modelFamily", model.split(" ")[0]);
